@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		{% if title %}
+        <title>{{ title }} - Woodwind</title>
+		{% else %}
+		<title>Welcome to Woodwind!</title>
+		{% endif %}
+    </head>
+    <body>
+    	<div>Woodwind: <a href="/index">Home</a></div>
+		{% block content %}{% endblock %}
+    </body>
+</html>
