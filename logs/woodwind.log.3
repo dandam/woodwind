@@ -1,0 +1,125 @@
+2023-12-11 12:13:33,289 ERROR: Exception on /user/etta [GET] [in /Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/dandam/dev/woodwind/app/routes.py", line 77, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 1, in top-level template code
+    {%  extends "base.html" %}
+  File "/Users/dandam/dev/woodwind/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2023-12-11 12:18:29,193 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 12:18:39,940 ERROR: Exception on /user/etta [GET] [in /Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/dandam/dev/woodwind/app/routes.py", line 77, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 1, in top-level template code
+    {%  extends "base.html" %}
+  File "/Users/dandam/dev/woodwind/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2023-12-11 12:18:52,138 ERROR: Exception on /user/etta [GET] [in /Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/dandam/dev/woodwind/app/routes.py", line 77, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 1, in top-level template code
+    {%  extends "base.html" %}
+  File "/Users/dandam/dev/woodwind/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2023-12-11 12:19:58,294 ERROR: Exception on /user/etta [GET] [in /Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/dandam/dev/woodwind/app/routes.py", line 77, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 1, in top-level template code
+    {%  extends "base.html" %}
+  File "/Users/dandam/dev/woodwind/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/dandam/dev/woodwind/app/templates/user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

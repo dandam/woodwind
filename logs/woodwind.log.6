@@ -1,0 +1,112 @@
+2023-12-08 14:21:27,931 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-08 14:22:05,172 ERROR: Exception on /edit_profile [POST] [in /Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py:825]
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/dandam/dev/woodwind/app/routes.py", line 86, in edit_profile
+    db.session.commit()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py", line 598, in commit
+    return self._proxied.commit()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dandam/dev/woodwind/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('johnnyAce', "I'm really the biggest Bill around.\r\n", 3)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-12-08 14:32:39,548 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-08 14:45:34,765 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:36:10,317 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:38:06,684 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:38:39,032 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:39:16,642 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:39:38,290 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:40:12,369 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:51:37,223 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-10 13:55:43,031 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 10:46:08,306 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:06:11,960 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:13:43,880 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:18:12,322 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:18:39,020 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:19:39,186 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:21:26,379 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:22:34,217 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:24:00,326 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:24:38,175 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:26:33,909 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:27:04,274 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:30:24,131 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:32:07,197 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:35:34,529 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:38:46,681 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:39:33,667 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:40:17,141 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:41:15,473 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:42:17,010 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:45:41,400 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:46:10,632 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:46:39,099 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:46:55,239 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:48:47,629 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:49:18,324 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 11:50:19,546 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
+2023-12-11 12:01:23,907 INFO: Woodwind startup [in /Users/dandam/dev/woodwind/app/__init__.py:42]
